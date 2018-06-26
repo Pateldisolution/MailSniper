@@ -1948,7 +1948,7 @@ function Invoke-PasswordSprayEWS{
 		    {
 		    	Write-Output "[-] Valid username: $($UserName)"
 		    }
-		    elif($ErrorMessage -like "*(404) Not Found*")
+		    elseif($ErrorMessage -like "*(404) Not Found*")
 		    {
 		    	Write-Output "[!] Invalid username: $($UserName)"
 		    }
