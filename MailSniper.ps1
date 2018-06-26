@@ -1944,6 +1944,14 @@ function Invoke-PasswordSprayEWS{
                         Write-Output "[*] Some options to try: Exchange2007_SP1, Exchange2010, Exchange2010_SP1, Exchange2010_SP2, Exchange2013, or Exchange2013_SP1."
                         break
                     }
+		    if ($ErrorMessage -like "*(401) Unauthorized*")
+		    {
+		    	Write-Output "[-] Valid username: $($UserName)"
+		    }
+		    else if($ErrorMessage -like "*(404) Not Found*")
+		    {
+		    	Write-Output "[!] Invalid username: $($UserName)"
+		    }
                 }   
    
 
